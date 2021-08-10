@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+$ur-blue: #003B71;
+$ur-yellow: #FFD100;
+$white: #FFFFFF;
+$source-sans: 'Source Sans Pro', sans-serif;
+$cb: cubic-bezier(.5,0,.5,1);
+
+#openSurveyBtn{
+  background-color:$ur-blue;
+  padding:22px 60px;
+  border:0;
+  color:$white;
+  font-family:$source-sans;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  font-weight:bold;
+  border-radius:5px;
+  transition:background-color $cb .2s;
+  font-size:18px;
+  cursor: pointer;
+  &:hover{
+    background-color:lighten($ur-blue, 10%);
+  }
+}
+
+.logo-rocky{
+  position:absolute;
+  width:80px;
+  height:auto;
+  top:-60px;
+  left:-35px;
+  transform:rotateZ(-8deg);
+}
+
+.survey-container{
+  position:absolute;
+  bottom:15px;
+  right:15px;
+  background-image:url('../images/survey-bg@2x.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+  background-color:$ur-blue;
+  border-radius:5px;
+  text-align:center;
+  color:$white;
+  font-family:$source-sans;
+  box-shadow:0px 0px 15px rgba(0,0,0,0.75);
+  transition: transform $cb .5s, filter $cb .5s;
+  *, *:before, *:after{
+    box-sizing:border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+  }
+
+  &.open{
+    transform:translateX(0) scale(1) rotateY(0deg);
+    filter:blur(0px);
+  }
+
+  &.close{
+    transform:translateX(140%) scale(0) rotateY(180deg);
+    filter:blur(50px);
+  }
+
+  .ur-logo-container{
+    background-color:rgba(darken($ur-blue, 10%), .4);
+    .discover-ur-logo{
+      width:35%;
+      padding:20px 0;
+    }
+  }
+
+  .survey{
+    position: relative;
+    padding:30px 30px 30px;
+  }
+
+  .headline{
+    font-size:21px;
+    font-weight:bold;
+  }
+
+  .subhead{
+    font-size:16px;
+    margin-bottom:20px;
+    display: block;
+  }
+
+  .survey-button{
+    position: relative;
+    display:flex;
+    background-color:$ur-yellow;
+    border-radius:5px;
+    color:$ur-blue;
+    text-decoration:none;
+    text-align:center;
+    justify-content: center;
+    align-items:center;
+    padding:15px;
+    transition:transform $cb .2s, background-color $cb .2s, box-shadow $cb .2s;
+    margin-top:10px;
+    box-shadow:0px 0px 0px rgba(0,0,0,0);
+
+    &:hover{
+      transform:scale(1.04);
+      box-shadow:0px 0px 8px rgba(0,0,0,0.5);
+      background-color:lighten($ur-yellow, 8%);
+      span:after{
+        transform:scaleX(1);
+      }
+    }
+
+    &:active{
+      transition:transform $cb .03s;
+      transform:scale(1.02);
+    }
+
+    svg{
+      margin-right:8px;
+    }
+
+    span{
+      text-transform:uppercase;
+      letter-spacing:.03em;
+      font-size:16px;
+      font-weight:bold;
+      position: relative;
+      line-height:1;
+      &:after{
+        content:"";
+        height:2px;
+        width:calc(100% + 23px);
+        position:absolute;
+        bottom:-5px;
+        left:-23px;
+        background-color: $ur-blue;
+        z-index:10;
+        transform:scaleX(0);
+        transition:transform $cb .2s;
+      }
+    }
+  }
+
+  .close-button{
+    position:absolute;
+    top:-8px;
+    right:-8px;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    border:1px solid $white;
+    background-color:$ur-blue;
+    transition: transform $cb .2s, background-color $cb .2s;
+    &:hover{
+      transform:scale(1.15);
+      background-color:lighten($ur-blue, 10%);
+    }
+    &:active{
+      transition: transform $cb .03s;
+      transform:scale(.9);
+    }
+  }
+
+  .opt-out{
+    color:$white;
+    margin-top:18px;
+    display: block;
+    opacity:0.9;
+    &:hover{
+      text-decoration: none;
+      opacity: 1;
+    }
+
+  }
+
+}
