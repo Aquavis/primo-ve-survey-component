@@ -45,3 +45,4 @@ build/buildinfo.properties
 build/config/buildinfo.properties
 /inc/.DS_Store
 node_modules
+.tmp
