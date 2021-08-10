@@ -5,10 +5,10 @@
     var optOutCookie;
 
     if(document.cookie){
-        visitCountValue = parseInt(document.cookie
-            .split('; ')
-            .find(row => row.startsWith('visitCount='))
-            .split('=')[1]);
+        // visitCountValue = parseInt(document.cookie
+        //     .split('; ')
+        //     .find(row => row.startsWith('visitCount='))
+        //     .split('=')[1]);
         // optOutCookie = document.cookie
         //     .split('; ')
         //     .find(row => row.startsWith('opOut='))

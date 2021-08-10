@@ -3,8 +3,11 @@
   var visitCountValue;
   var optOutCookie;
 
-  if (document.cookie) {
-    visitCountValue = parseInt(document.cookie.split('; ').find(row => row.startsWith('visitCount=')).split('=')[1]); // optOutCookie = document.cookie
+  if (document.cookie) {// visitCountValue = parseInt(document.cookie
+    //     .split('; ')
+    //     .find(row => row.startsWith('visitCount='))
+    //     .split('=')[1]);
+    // optOutCookie = document.cookie
     //     .split('; ')
     //     .find(row => row.startsWith('opOut='))
     //     .split('=')[1];
@@ -60,4 +63,3 @@
     };
   };
 })();
-//# sourceMappingURL=main.js.map
